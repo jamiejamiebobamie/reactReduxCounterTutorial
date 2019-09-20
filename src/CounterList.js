@@ -9,10 +9,12 @@ class CounterList extends Component{
 render(){
     return (
       <div>
-        {this.props.counters.map((count, i) => {
+        {this.props.counters.map((counter, i) => {
           return (
             <Counter
-              count={count}
+              count={counter.value}
+              name={counter.name}
+              index={i}
               increment={() => this.props.increment(i, 4)}
               decrement={() => this.props.decrement(i, 4)}
               reset={() => this.props.reset(i, 0)}
